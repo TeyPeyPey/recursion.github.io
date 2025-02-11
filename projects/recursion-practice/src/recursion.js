@@ -50,12 +50,17 @@ var isEven = function(n, output=0) {
     return output;
   }
   //recursion
+  if(n === 2){
+    return true;
+  }
+  else if (n === 1){
+    return false;
+  }
   
-
-  //return;
+  return isEven(n-2);
 };
 console.log(isEven(55));
-console.log(isEven(2));
+console.log(isEven(4));
 
 // 5. Sum all integers below a given integer.
 // sumBelow(10); // 45
