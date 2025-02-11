@@ -23,22 +23,39 @@ console.log(factorial(3));
 // Example:  sum([1, 2, 3, 4, 5, 6]);  // 21
 var sum = function(array, output=0) {
   //base
-if (array.length === 'sum'){
-  return array;
+if (array.length === 0){
+  return output;
 }
   //recursion 
-  
+  if (array[0] > 0){
+    output += array[0]
+  }
+  if (array[0] < 0){
+    output += array[0]
+  }
+  return sum(array.slice(1), output);
 };
-console.log(sum[1, 2, 3, 4, 5]);
+console.log(sum([1, 2, 3, 4, 5, 6, 7]));
 
 // 3. Sum all numbers in an array containing nested arrays.
 // Example: arraySum([1,[2,3],[[4]],5]); // 15
 var arraySum = function(array) {
 };
 
+
 // 4. Check if a number is even.
-var isEven = function(n) {
+var isEven = function(n, output=0) {
+  //base
+  if (n === 0){
+    return output;
+  }
+  //recursion
+  
+
+  //return;
 };
+console.log(isEven(55));
+console.log(isEven(2));
 
 // 5. Sum all integers below a given integer.
 // sumBelow(10); // 45
@@ -85,9 +102,19 @@ var modulo = function(x, y) {
 // 12. Write a function that multiplies two numbers without using the * operator  or
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
-var multiply = function(x, y) {
+var multiply = function(x, y, output=0) {
+  //base
+  if(y === 0){
+return output;
+  }
+
+  //recursion
+  output += x;
+
+  return multiply(x, y - 1, output);
 };
 
+multiply(2, 4); 
 // 13. Write a function that divides two numbers without using the / operator  or
 // JavaScript's Math object.
 var divide = function(x, y) {
