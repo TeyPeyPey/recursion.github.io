@@ -45,22 +45,24 @@ var arraySum = function(array) {
 
 // 4. Check if a number is even.
 var isEven = function(n, output=0) {
-  //base
-  if (n === 0){
-    return output;
-  }
-  //recursion
-  if(n === 2){
-    return true;
-  }
-  else if (n === 1){
-    return false;
-  }
-  
-  return isEven(n-2);
-};
+    // base
+    if (n === 0){
+      return true;
+    }
+    if (n === 1){
+      return false;
+    }
+    // recursion
+    if (n < 0){
+      return isEven(n + 2)
+    }
+    if (n > 0){
+      return isEven(n - 2)
+    }
+  };
 console.log(isEven(55));
 console.log(isEven(4));
+console.log(isEven(-5));
 
 // 5. Sum all integers below a given integer.
 // sumBelow(10); // 45
