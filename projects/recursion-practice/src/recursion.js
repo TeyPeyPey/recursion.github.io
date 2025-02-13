@@ -67,8 +67,18 @@ console.log(isEven(-5));
 // 5. Sum all integers below a given integer.
 // sumBelow(10); // 45
 // sumBelow(7); // 21
-var sumBelow = function(n) {
+var sumBelow = function(n, output=0) {
+  //base
+  if(n <= 0){
+    return output;
+  }
+  //recursion
+   return sumBelow(n - 1);
+   
 };
+console.log(sumBelow(9));
+console.log(sumBelow(5));
+console.log(sumBelow(-5));
 
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
