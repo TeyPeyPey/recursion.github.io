@@ -69,16 +69,22 @@ console.log(isEven(-5));
 // sumBelow(7); // 21
 var sumBelow = function(n, output=0) {
   //base
-  if(n <= 0){
-    return output;
+    // think of what the base case should be
+    if (n === 0){
+      return output;
+    }
+  //recursion  
+  if (n > 0){
+    // how do we update output?
+    output + (n - 1);
+    return sumBelow(n - 1);
   }
-  //recursion
-   return sumBelow(n - 1);
-   
+  if (n < 0){
+    // how do we update output?
+    output + n;
+    return sumBelow(n + 1);
+  }
 };
-console.log(sumBelow(9));
-console.log(sumBelow(5));
-console.log(sumBelow(-5));
 
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
